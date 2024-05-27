@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Amor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://www.shutterstock.com/image-vector/red-love-heart-seamless-pattern-600nw-2238463297.jpg'); /* Substitua pelo caminho da sua imagem de fundo */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #question {
+            margin-bottom: 20px;
+        }
+        #options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        #yes, #no {
+            padding: 10px 20px;
+            background-color: rgba(255, 0, 0, 0.8); /* Vermelho */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #yes:hover, #no:hover {
+            background-color: rgba(255, 0, 0, 1);
+        }
+    </style>
+</head>
+<body>
+    <div id="question">
+        <h1>Queres passar o resto da tua vida comigo Miguel?</h1>
+    </div>
+    <div id="options">
+        <button id="yes">Sim</button>
+        <button id="no">Não</button>
+    </div>
+
+    <script>
+        document.getElementById('yes').addEventListener('click', function() {
+            // Redirecionar para a página do certificado ao clicar em "Sim"
+            window.location.href = 'pagina_certificado.html'; // Substitua pelo caminho da sua página de certificado
+        });
+
+        document.getElementById('no').addEventListener('click', function() {
+            // Remover a opção "Não" ao clicar em "Não"
+            document.getElementById('no').style.display = 'none';
+            document.getElementById('yes').style.display = 'none';
+            // Adicionar uma mensagem adicional
+            var message = document.createElement('p');
+            message.textContent = 'Tás a brincar com o perigo, é melhor voltares atrás e clicares em SIM!!! porque não tens opção de escolha -_-';
+            document.body.appendChild(message);
+        });
+    </script>
+</body>
+</html>
